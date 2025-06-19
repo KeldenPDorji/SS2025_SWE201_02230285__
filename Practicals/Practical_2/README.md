@@ -4,6 +4,7 @@
 I worked on a React Native app’s authentication system using Supabase, tweaking my professor’s existing code. My tasks included:
 
 - **Email and Password Authentication**: Modified the sign-up and login flows using Supabase’s `auth.signUp` and `auth.signInWithPassword` methods to improve form validation and session handling.
+
 ![alt text](Images/6332291849426946179.jpg)
 ![alt text](Images/6332291849426946180.jpg)
 ![alt text](Images/6332291849426946181.jpg)
