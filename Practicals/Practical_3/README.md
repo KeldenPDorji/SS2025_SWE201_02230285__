@@ -1,50 +1,102 @@
-# Welcome to your Expo app 👋
+# 📝 Drac's Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean, mobile-friendly Todo List app built with **React Native** and **Firebase Firestore**, featuring real-time updates, task management, and a responsive user interface.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+* ✅ Add, complete, and delete tasks
+* 🔁 Real-time sync using Firebase Firestore
+* 📊 Live progress tracker with percentage bar
+* 🎨 Modern and responsive UI
+* ⚡ Offline-first support (Firestore cache)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 📷 Screenshots
+![alt text](image.png)
+![alt text](image-1.png)
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **React Native**
+* **Firebase Firestore**
+* **Expo**
+* **TypeScript**
+* **Icons**: `@expo/vector-icons` (MaterialIcons, AntDesign)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🔧 Setup Instructions
 
-When you're ready, run:
+1. **Clone the repository:**
 
 ```bash
-npm run reset-project
+gitclone https://github.com/KeldenPDorji/SS2025_SWE201_02230285__.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Install dependencies:**
 
-## Learn more
+```bash
+npm install
+# or
+yarn
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. **Configure Firebase:**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* Create a Firebase project at [https://console.firebase.google.com](https://console.firebase.google.com)
+* Enable **Firestore**
+* Replace the content in `firebaseConfig.ts`:
 
-## Join the community
+```ts
+// firebaseConfig.ts
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
-Join our community of developers creating universal apps.
+const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_BUCKET',
+  messagingSenderId: 'YOUR_MSG_ID',
+  appId: 'YOUR_APP_ID',
+};
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+const app = initializeApp(firebaseConfig);
+export const FIRESTORE_DB = getFirestore(app);
+```
+
+4. **Run the app:**
+
+```bash
+npm start
+```
+
+> Open with Expo Go on your device or an emulator.
+
+---
+
+## 📌 Notes
+
+* Tasks are stored under the `todos` collection in Firestore.
+* The app uses `title` and `done` fields for task data.
+
+---
+
+## ✨ Future Improvements (Optional)
+
+* 🔐 Add Firebase Authentication
+* 🗂️ Filter: All / Active / Completed
+* ⏰ Add task due dates and reminders
+* 📝 Edit task titles
+
+---
+
+## 👨‍💻 Author
+
+**Drac** – *Student project for Practical 3*
+
+---
